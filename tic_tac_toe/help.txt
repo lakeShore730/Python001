@@ -1,0 +1,6 @@
+In order to run this game, you have to follow all the instructions below 
+
+1) negaviate to tic_tac_teo folder (cd tic_tac_teo)
+2) run this command (python3 game.py)
+
+---End---
