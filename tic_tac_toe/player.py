@@ -1,29 +1,54 @@
-import math
 import random 
 
 class Player:
+    ''' 
+    This is parent (base) class
+    '''    
     def __init__(self, letter):
-        # letter is x or not 
-    self.letter = letter       
-    
-    def get_move(self, game):
+        self.letter = letter
+        
+    def get_move(self):
         pass
     
     
-class RandomComputerPlayer(Player):
+class HumanPlayer(Player):
+    '''
+    This is human player. It inherits Player base (parent) class 
+    in order to use it's parent attributes and properties
+    '''
+    
     def __init__(self, letter):
         super().__init__(letter)
+    
         
     def get_move(self, game):
-        pass
-                
+        valid_square = False
+        val = None
         
-class HumanPlayer(Player):
+        while not valid_square:
+            square = input(self.letter + '\'s turn. Input move (0-9): ')
+            try:
+                val = int(square)
+                if val not in game.available_moves():
+                    raise ValueError
+                valid_square = True
+            except ValueError:
+                print('Invalid square. Try again.')
+        return val        
+
+        
+        
+class RandomComputerPlayer(Player):
+    '''
+        This is computer player.
+    '''
+    
     def __init__(self, letter):
-        super(letter)
-        
+        super().__init__(letter)
+
     def get_move(self, game):
-        pass
-    
+        square = random.choice(game.available_moves())
+        return square
+
+  
         
-    
