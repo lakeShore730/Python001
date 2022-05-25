@@ -53,7 +53,7 @@ if __name__ == "__main__":
     sorted_list = sorted(list(sorted_list))
     
     # Now, let's search all number in list 
-
+    
     start_time = time.time()
     
     for target in sorted_list:

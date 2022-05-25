@@ -16,6 +16,7 @@ def get_valid_word(words):
 
 def human():
     word = get_valid_word(word_list)
+    print(word)
     word_letters = set(word.upper())    
     alphabet = set(string.ascii_uppercase) # Get A to Z chars (with uppercase ascending order) in string format and convent them to the set.
     used_letters = set() # what user has guessed word 
@@ -55,4 +56,5 @@ def human():
         print("Sorry, mession incomplete....")
            
 human()
+
 
